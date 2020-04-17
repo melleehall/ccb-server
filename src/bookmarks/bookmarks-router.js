@@ -10,10 +10,10 @@ const bodyParser = express.json()
 const serializeBookmark = bookmark => ({
   id: bookmark.id,
   title: xss(bookmark.title),
-  lastName: bookmark.lastName,
+  lastname: bookmark.lastname,
   url: bookmark.url,
-  streetNum: bookmark.streetNum,
-  streetName: bookmark.streetName,
+  streetnum: bookmark.streetnum,
+  streetname: bookmark.streetname,
   city: bookmark.city,
   zip: bookmark.zip,
   description: xss(bookmark.description),
@@ -30,23 +30,15 @@ bookmarksRouter
       .catch(next)
   })
   .post(bodyParser, (req, res, next) => {
-    for (const field of ['title', 'lastName', 'url', 'streetNum', 'streetName', 'city', 'zip', 'rating']) {
-      console.log(req.body.title);
-      console.log(req.body.lastName);
-      console.log(req.body.url);
-      console.log(req.body.streetNum);
-      console.log(req.body.streetName);
-      console.log(req.body.city);
-      console.log(req.body.zip);
-      console.log(req.body.rating);
-      console.log(typeof req.body.rating);
+    for (const field of ['title', 'lastname', 'url', 'streetnum', 'streetname', 'city', 'zip', 'rating']) {
+
       if (!req.body[field]) {
         logger.error(`${field} is required`)
         return res.status(400).send(`'${field}' is required`)
       }
     }
 
-    const { title, lastName, url, description, rating } = req.body
+    const { title, lastname, url, streetnum, streetname, city, zip, description, rating } = req.body
 
     if (!Number.isInteger(rating) || rating < 0 || rating > 5) {
       logger.error(`Invalid rating '${rating}' supplied`)
@@ -58,7 +50,7 @@ bookmarksRouter
       return res.status(400).send(`'url' must be a valid URL`)
     }
 
-    const newBookmark = { title, lastName, url, streetNum, streetName, city, zip, description, rating }
+    const newBookmark = { title, lastname, url, streetnum, streetname, city, zip, description, rating }
 
     BookarksService.insertBookmark(
       req.app.get('db'),

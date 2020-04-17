@@ -6,6 +6,7 @@ const BookmarksService = {
     return knex.from('bookmarks').select('*').where('id', id).first()
   },
   insertBookmark(knex, newBookmark) {
+    console.log(newBookmark)
     return knex
       .insert(newBookmark)
       .into('bookmarks')
