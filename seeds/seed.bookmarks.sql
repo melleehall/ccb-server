@@ -1,4 +1,4 @@
-INSERT INTO bookmarks (id, title, lastname, url, streetnum, streetname, city, zip, description, rating)
+INSERT INTO contacts (id, firstname, lastname, email, phone, streetnum, streetname, city, zip)
 VALUES
-  (1, 'Thinkful', 'Last name', 'https://www.thinkful.com', '123', 'Street name', 'A city', '12345', 'Think outside the classroom', '5'),
-  (2, 'Google', 'Hallowel', 'https://www.google.com', '123', 'Frog Street', 'Evergreen', '54637', 'Where we find everything else', '4')
+  (1, 'First', 'Last name', 'email@gmail.com', '303-303-3030', '111', 'City', '12345'),
+  (2, 'Mister', 'Moose', 'mistermoose@gmail.com', '313-313-3131', '123', 'Frog Street', 'Evergreen', '54637')

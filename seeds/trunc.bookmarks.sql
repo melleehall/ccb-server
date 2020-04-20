@@ -1,1 +1,1 @@
-TRUNCATE bookmarks;
+TRUNCATE contacts;
