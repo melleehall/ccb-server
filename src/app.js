@@ -18,7 +18,7 @@ app.use(helmet())
 
 app.use(contactsRouter)
 
-app.get('/', (req, res) => {
+app.get('/hello', (req, res) => {
   res.send('Hello, world!')
 })
 

@@ -19,7 +19,7 @@ const serializeContact = contact => ({
 })
 
 contactsRouter
-  .route('/contacts')
+  .route('/')
   .post(bodyParser, (req, res, next) => {
     for (const field of ['firstname', 'lastname', 'email', 'phone', 'streetnum', 'streetname', 'city', 'zip']) {
 
