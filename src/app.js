@@ -18,6 +18,7 @@ app.use(helmet())
 
 app.use(contactsRouter)
 
+// used to test connection for hosted server
 app.get('/hello', (req, res) => {
   res.send('Hello, world!')
 })
