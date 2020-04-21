@@ -4,18 +4,17 @@ const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
-const validateBearerToken = require('./validate-bearer-token')
+// const validateBearerToken = require('./validate-bearer-token')
 const errorHandler = require('./error-handler')
 const contactsRouter = require('./contacts/contacts-router')
 
 const app = express()
 
-app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
-  skip: () => NODE_ENV === 'test'
-}))
+const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
+app.use(morgan(morganSetting))
 app.use(cors())
 app.use(helmet())
-app.use(validateBearerToken)
+// app.use(validateBearerToken)
 
 app.use(contactsRouter)
 
