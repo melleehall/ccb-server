@@ -46,13 +46,13 @@ contactsRouter
       })
       .catch(next)
     })
-    // .get((req, res, next) => {
-    //   ContactsService.getAllContacts(req.app.get('db'))
-    //     .then(contacts => {
-    //       res.json(contacts.map(serializeContact))
-    //     })
-    //     .catch(next)
-    // })
+    .get((req, res, next) => {
+      ContactsService.getAllContacts(req.app.get('db'))
+        .then(contacts => {
+          res.json(contacts.map(serializeContact))
+        })
+        .catch(next)
+    })
 
 // contactsRouter
 //   .route('/contacts/:contact_id')
