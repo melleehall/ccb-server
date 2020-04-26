@@ -29,9 +29,11 @@ contactsRouter
       }
     }
 
-    const {firstname, lastname, email, phone, streetnum, streetname, city, zip, request_service, request_news } = req.body
+    const {firstname, lastname, email, phone, streetnum, streetname, city, zip, request_service, request_news, volunteer } = req.body
 
-    const newContact = { firstname, lastname, email, phone, streetnum, streetname, city, zip, request_service, request_news }
+    const newContact = { firstname, lastname, email, phone, streetnum, streetname, city, zip, request_service, request_news, volunteer }
+
+    console.log(newContact)
 
     ContactsService.insertContact(
       req.app.get('db'),

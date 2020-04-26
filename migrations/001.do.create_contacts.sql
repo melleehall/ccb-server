@@ -9,5 +9,6 @@ CREATE TABLE contacts (
   city TEXT NOT NULL,
   zip TEXT NOT NULL,
   request_service BOOLEAN NOT NULL DEFAULT 'no',
-  request_news BOOLEAN NOT NULL DEFAULT 'no'
+  request_news BOOLEAN NOT NULL DEFAULT 'no',
+  volunteer BOOLEAN NOT NULL DEFAULT 'no'
 );
