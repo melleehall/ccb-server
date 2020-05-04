@@ -17,7 +17,7 @@
   "enginges": {
     "node": "10.11.0"
   },
-  "author": "Thomas `tomatao` Hudspith-Tatham <iammotivated@gmail.com>",
+  "author": "Melanie Hallowell",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
