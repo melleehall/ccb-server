@@ -19,21 +19,21 @@ const serializeContact = contact => ({
 })
 
 contactsRouter
-  .route('/contacts')
+  .route('/')
   .post(bodyParser, (req, res, next) => {
     for (const field of ['firstname', 'lastname', 'email', 'phone', 'streetnum', 'streetname', 'city', 'zip']) {
 
       if (!req.body[field]) {
         logger.error(`${field} is required`)
-        return res.status(400).send(`'${field}' is required`)
+        return res.status(400).json({
+          error: { message: `Missing required field ${field} in request body` }
+        })
       }
     }
 
     const {firstname, lastname, email, phone, streetnum, streetname, city, zip, request_service, request_news, volunteer } = req.body
 
     const newContact = { firstname, lastname, email, phone, streetnum, streetname, city, zip, request_service, request_news, volunteer }
-
-    console.log(newContact)
 
     ContactsService.insertContact(
       req.app.get('db'),
@@ -43,7 +43,7 @@ contactsRouter
         logger.info(`Contact with id ${contact.id} created.`)
         res
           .status(201)
-          .location(`/contacts/${contact.id}`)
+          .location(`/api/contacts/${contact.id}`)
           .json(serializeContact(contact))
       })
       .catch(next)
