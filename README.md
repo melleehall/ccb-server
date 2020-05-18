@@ -1,6 +1,6 @@
 <h1>Clear Creek Broadband API<h1>
 
-*Live DEMO*: https://home-holiday.now.sh/
+*Live*: https://www.clearcreekbroadband.com
 
 ## Description
 
