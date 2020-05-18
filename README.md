@@ -1,6 +1,6 @@
 <h1>Clear Creek Broadband API<h1>
 
-*Live*: https://www.clearcreekbroadband.com
+*Live*: https://ccb-app.now.sh/
 
 ## Description
 
@@ -8,9 +8,37 @@ This API supports the website for Clear Creek Broadband (CCB), a local internet 
 
 ## Routes
 
-/api/contacts
+<h2>POST <code>/api/contacts<code><h2>
 
-* POST : insert a new contact into the database and returns the new contact (type: object) and its location
+* Inserts a new contact into the database and returns the new contact (type: object) and its location
+
+
+// req.body with required fields
+{
+  firstname: String,
+  lastname: String,
+  email: String, 
+  phone: String, 
+  streetnum: Integer, 
+  streetname: String, 
+  city: String, 
+  zip: String,
+}
+
+// req.body with optional fields
+{
+  firstname: String,
+  lastname: String,
+  email: String, 
+  phone: String, 
+  streetnum: Integer, 
+  streetname: String, 
+  city: String, 
+  zip: String,
+  request_service: Boolean,
+  request_news: Boolean,
+  volunteer: Boolean
+}
 
 ## Screenshots
 
