@@ -1,26 +1,37 @@
-# Express Boilerplate!
+<h1>Clear Creek Broadband API<h1>
 
-This is a boilerplate project used for starting new projects!
+*Live DEMO*: https://home-holiday.now.sh/
 
-## How do set up?
+## Description
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+This API supports the website for Clear Creek Broadband (CCB), a local internet service company dedicated to providing their neighbors in Eastern Clear Creek County, Colorado with access to a highspeed broadband connection.  The Signup view form is supported by this API, allowing users an easy channel to request internet service, volunteer to help CCB's effort, and/or join the mailing list to stay updated.
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+## Routes
 
-## Scripts
+/api/contacts
 
-Start the application `npm start`
+* POST : insert a new contact into the database and returns the new contact (type: object) and its location
 
-Start nodemon for the application `npm run dev`
+## Screenshots
 
-Run the tests in watch mode `npm test`
+Landing Page Description:
 
-## Deploying
+![dashboard stats](Screengrabs/LandingPageDescription.png)
 
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+Mobile Navigation:
+
+![navigation](Screengrabs/MobileNav.png)
+
+Signup Form:
+
+![signup page](Screengrabs/SignupPage.png)
+
+
+## Technology
+
+* Node.js
+* Express
+* JavaScript
+* PostgreSQL
+* Testing: Mocha / Chai / Supertest
+

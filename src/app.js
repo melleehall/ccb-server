@@ -5,7 +5,6 @@ const cors = require('cors')
 // const {CLIENT_ORIGIN} = require('./config');
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
-// const validateBearerToken = require('./validate-bearer-token')
 const errorHandler = require('./error-handler')
 const contactsRouter = require('./contacts/contacts-router')
 
@@ -20,7 +19,6 @@ app.use(cors())
 //   })
 // );
 app.use(helmet())
-// app.use(validateBearerToken)
 
 app.use('/api/contacts', contactsRouter)
 
@@ -29,6 +27,7 @@ app.get('/hello', (req, res) => {
   res.send('Hello, world!')
 })
 
+// last piece of middleware to handle any errors
 app.use(errorHandler)
 
 module.exports = app
