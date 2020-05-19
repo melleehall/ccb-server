@@ -10,10 +10,11 @@ This API supports the website for Clear Creek Broadband (CCB), a local internet 
 
 <h2>POST /api/contacts<h2>
 
-* Inserts a new contact into the database and returns the new contact (type: object) and its location
+Inserts a new contact into the database and returns the new contact (type: object) and its location
 
-// req.body required fields
+* req.body required fields
 
+{
   firstname: String,
   lastname: String,
   email: String, 
@@ -22,12 +23,15 @@ This API supports the website for Clear Creek Broadband (CCB), a local internet 
   streetname: String, 
   city: String, 
   zip: String,
+}
 
-// req.body optional fields
+* req.body optional fields
 
+{
   request_service: Boolean,
   request_news: Boolean,
   volunteer: Boolean
+}
 
 ## Screenshots
 
