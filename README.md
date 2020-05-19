@@ -8,7 +8,7 @@ This API supports the website for Clear Creek Broadband (CCB), a local internet 
 
 ## Routes
 
-<h2>POST /api/contacts<h2>
+<h3>POST /api/contacts<h3>
 
 <p>
 Inserts a new contact into the database and returns the new contact (type: object) and its location
