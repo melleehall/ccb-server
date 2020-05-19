@@ -21,7 +21,7 @@ app.use(helmet())
 
 app.use('/api/contacts', contactsRouter)
 
-// easy connection test
+// route to quickly test connection
 app.get('/', (req, res) => {
   res.send('Hello, world!  See API documentation here: https://github.com/melleehall/ccb-api')
 })
