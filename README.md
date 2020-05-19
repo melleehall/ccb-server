@@ -1,6 +1,6 @@
 <h1>Clear Creek Broadband API<h1>
 
-*Live*: https://ccb-app.now.sh/
+* Live Website: https://www.clearcreekbroadband.com/
 
 ## Description
 
