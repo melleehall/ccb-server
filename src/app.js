@@ -22,9 +22,9 @@ app.use(helmet())
 
 app.use('/api/contacts', contactsRouter)
 
-// used to test connection for hosted server
-app.get('/hello', (req, res) => {
-  res.send('Hello, world!')
+// easy connection test
+app.get('/', (req, res) => {
+  res.send('Hello, world!  See API documentation here: https://github.com/melleehall/ccb-api')
 })
 
 // last piece of middleware to handle any errors
