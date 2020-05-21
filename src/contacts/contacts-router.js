@@ -21,7 +21,7 @@ const serializeContact = contact => ({
 
 contactsRouter
   .route('/')
-  // posts a new contact (used with signup form)
+  // posts a new contact (used with CCB signup form)
   .post(bodyParser, (req, res, next) => {
     for (const field of ['firstname', 'lastname', 'email', 'phone', 'streetnum', 'streetname', 'city', 'zip']) {
 

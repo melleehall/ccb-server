@@ -12,11 +12,12 @@ const app = express()
 
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
 app.use(morgan(morganSetting))
-app.use(
-  cors({
-      origin: CLIENT_ORIGIN
-  })
-);
+app.use(cors())
+// app.use(
+//   cors({
+//       origin: CLIENT_ORIGIN
+//   })
+// );
 app.use(helmet())
 
 app.use('/api/contacts', contactsRouter)
